@@ -1,4 +1,17 @@
 icfp-2014-contracts-talk
 ========================
 
-Slide implementation from 2014 ICFP keynote 
+Slideshow implementation from 2014 ICFP keynote.
+
+Install via the package manager:
+
+```
+raco pkg install icfp-2014-contracts-talk
+```
+
+and then run via `racket`
+```
+racket -l icfp-2014-contracts-talk
+```
+
+
