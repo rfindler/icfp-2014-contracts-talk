@@ -14,4 +14,4 @@ and then run via `racket`
 racket -l icfp-2014-contracts-talk
 ```
 
-
+The video is on youtube: https://www.youtube.com/watch?v=gXTbMPVFP1M
