@@ -1,7 +1,8 @@
 #lang info
 
 (define deps 
-  '("base" 
+  '("plot-lib"
+    "base" 
     "draw-lib"
     "gui-lib"
     "pict-lib"
