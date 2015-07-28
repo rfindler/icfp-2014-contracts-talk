@@ -139,7 +139,7 @@
    background
    (- 1024 margin margin)
    (- 768 margin margin)))
-(define frozen-bkg (freeze scaled-bkg 0 0 0 0))
+(define frozen-bkg (freeze* scaled-bkg 0 0 0 0))
 (define base 
   (cc-superimpose
    (ghost scaled-bkg)

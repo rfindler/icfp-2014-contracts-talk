@@ -6,7 +6,7 @@
 (current-page-number-color (send the-color-database find-color "darkgray"))
 (current-keyword-list '("mon" "blame" "->" "->d"))
 
-(provide interpolate-color interpolate split pin-over/% freeze
+(provide interpolate-color interpolate split pin-over/% freeze*
          wrap/first-argument-always-1 subtitle
          color-code
          (contract-out
@@ -41,7 +41,7 @@
 (define (interpolate start stop n)
   (+ start (* (- stop start) n)))
 
-(define freeze
+(define freeze*
   (case-lambda
     [(p l t r b)
      (define insetted (inset p l t r b))
@@ -52,7 +52,7 @@
      (draw-pict insetted bdc 0 0)
      (send bdc set-bitmap #f)
      (inset (bitmap bmp) (- l) (- t) (- r) (- b))]
-    [(p) (freeze p 0 0 0 0)]))
+    [(p) (freeze* p 0 0 0 0)]))
 
 
 (define (wrap/first-argument-always-1 f)

@@ -128,12 +128,12 @@
                          0 0))
   
   (define red-dot-cloud
-    (freeze (inset (lt-superimpose red-dot (cloud 100 100))
-                   0 0 0 -40)
-            (+ 5 (max 0 (- x-argument-number)) 15)
-            (+ 5 (max 0 (- y-argument-number)) 15)
-            15
-            (+ 40 15)))
+    (freeze* (inset (lt-superimpose red-dot (cloud 100 100))
+                    0 0 0 -40)
+             (+ 5 (max 0 (- x-argument-number)) 15)
+             (+ 5 (max 0 (- y-argument-number)) 15)
+             15
+             (+ 40 15)))
   
   (define-values (red-dot-cloud-bytes cloud-bytes)
     (render-bytes (pict->argb-pixels red-dot-cloud)

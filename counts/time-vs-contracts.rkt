@@ -181,7 +181,7 @@
       [(cons (? symbol?) stuff)
        (loop stuff)])))
 
-(define histogram-bitmap (freeze (histogram) 0 0 0 0))
+(define histogram-bitmap (freeze* (histogram) 0 0 0 0))
 
 (module+ slideshow
   #;
