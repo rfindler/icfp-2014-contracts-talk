@@ -232,7 +232,7 @@
 (define (freeze/p a-cp l t r b)
   (match (coerce-to-cp 'freeze/p a-cp)
     [(cp string-tree pict cello)
-     (cp string-tree (freeze pict l t r b) cello)]))
+     (cp string-tree (freeze* pict l t r b) cello)]))
 
 (define (make-sure-contract a-cp #:extras [extras '()])
   (make-sure-ok a-cp 'contract? #:extras extras)

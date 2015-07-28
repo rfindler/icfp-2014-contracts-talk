@@ -21,8 +21,8 @@
                 client-w client-h)
                100)
         (vc-append (scale/improve-new-text (t "Contracts are infectious") 2)
-                   (freeze (parameterize ([plot-background "gray"])
-                             (make-plot #:width 1000))))
+                   (freeze* (parameterize ([plot-background "gray"])
+                              (make-plot #:width 1000))))
         (inset (not-projections) 100)
         (vc-append -80
                    (scale/improve-new-text (t "Boundaries matter") 2)
