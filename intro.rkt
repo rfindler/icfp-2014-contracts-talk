@@ -338,7 +338,7 @@
         substitute-n)
        (if (zero? substitute-n) 
            (blank) 
-           (cellophane (freeze (launder the-cloud-argument) 0 0 0 40) (- 1 convert-bytes-n)))
+           (cellophane (freeze* (launder the-cloud-argument) 0 0 0 40) (- 1 convert-bytes-n)))
        the-cloud-argument/2
        (get-pict cloud-argument-destination)
        substitute-n))
