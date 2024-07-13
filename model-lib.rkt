@@ -1,6 +1,6 @@
 #lang racket
 (require "color.rkt"
-         slideshow 
+         slideshow /fullscreen
          slideshow/code
          slideshow/play
          racket/draw)

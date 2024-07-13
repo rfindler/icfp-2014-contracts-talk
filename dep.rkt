@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow
+(require slideshow/fullscreen
          slideshow/play
          slideshow/code
          slideshow/balloon
@@ -132,6 +132,7 @@
 
 (define (introduce-dc-function)
   (play-n
+   #:aspect 'fullscreen
    (let ([bkg
           (ghost
            (launder
@@ -180,6 +181,7 @@
       (vc-append 20 eps red eps)
       "black")))
   (play-n
+   #:aspect 'fullscreen
    (λ (n1 n2)
      (define tan-border-size 10)
      (define line-size (pict-height (code x)))
@@ -219,6 +221,7 @@
      'sw
      -20 30))
   (play-n
+   #:aspect 'fullscreen
    (λ (n1 n2 n3)
      (define f-tt (tt/p "f"))
      (define lines-before

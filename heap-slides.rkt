@@ -2,7 +2,7 @@
 (require "heap.rkt"
          "util.rkt"
          racket/runtime-path
-         slideshow
+         slideshow/fullscreen
          slideshow/code
          slideshow/play)
 
@@ -276,6 +276,7 @@
 
 (define (show-heap-bugs/contracts-in-out)
   (play-n
+   #:aspect 'fullscreen
    (λ (contracts-out contracts-in)
      (scale-to-fit
       (if (= 0 contracts-in)
@@ -313,6 +314,7 @@
 
 (define (show-heap-bugs/first-bubble)
   (play-n
+   #:aspect 'fullscreen
    #:skip-first? #t
    (λ (red-bubble-appears)
      (scale-to-fit
@@ -325,6 +327,7 @@
   
 (define (show-heap-bugs/all-but-first-two-bubbles)
   (play-n
+   #:aspect 'fullscreen
    (λ (red-bubble-appears)
      (scale-to-fit
       (for/fold ([p background-with-spots]) ([bug-info (in-list (cddr bug-infos))])
@@ -338,6 +341,7 @@
 
 (define (show-heap-bugs/slide-one-bubble last-spot this-spot)
   (play-n
+   #:aspect 'fullscreen
    (λ (n)
      (scale-to-fit
       (slide-one-spot background-with-spots red-bubble last-spot this-spot n)

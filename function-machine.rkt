@@ -1,7 +1,7 @@
 #lang racket
 (require "color.rkt"
          racket/gui/base
-         slideshow)
+         slideshow/fullscreen)
 
 (provide function-machine
          function-machine-with-white-insides-and-boundaries

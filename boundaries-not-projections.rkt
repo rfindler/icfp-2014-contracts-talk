@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow 
+(require slideshow/fullscreen
          slideshow/play
          "util.rkt" "faces.rkt")
 
@@ -43,6 +43,6 @@
 
 (define (boundaries-not-projections) 
   (slide (proj-vs-boun values ghost))
-  (play-n mk-proc))
+  (play-n #:aspect 'fullscreen  mk-proc))
 
 (define (not-projections) (proj-vs-boun values ghost))

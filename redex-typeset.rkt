@@ -2,7 +2,7 @@
 (require "util.rkt" 
          "redex-model.rkt"
          redex
-         slideshow
+         slideshow/fullscreen
          slideshow/play)
 (provide introduce-calculus)
 
@@ -210,6 +210,7 @@
        (bring-out-and-put-back mon-rule mon-dest n5 n6)
        (bring-out-and-dont-put-back dep-rule dep-dest n7))))
   (play-n proc
+          #:aspect 'fullscreen
           #:steps
           (for/list ([i (in-range (procedure-arity proc))])
             (cond

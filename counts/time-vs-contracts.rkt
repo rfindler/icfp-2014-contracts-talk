@@ -54,6 +54,7 @@
 (define (time-vs-contracts)
   (define the-plot (make-plot))
   (play-n
+   #:aspect 'widescreen
    (λ (n1 n2 n3)
      (rb-superimpose 
       (lt-superimpose 

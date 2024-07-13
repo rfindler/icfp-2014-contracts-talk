@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow
+(require slideshow/fullscreen
          "util.rkt"
          "code-combine.rkt"
          "faces.rkt"
@@ -258,5 +258,5 @@
          function-rule-part2)
 
 (module+ main 
-  (play-n function-rule-part1)
-  (play-n function-rule-part2))
+  (play-n #:aspect 'fullscreen function-rule-part1)
+  (play-n #:aspect 'fullscreen function-rule-part2))

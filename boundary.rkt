@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow 
+(require slideshow/fullscreen
          slideshow/code
          slideshow/play
          racket/draw
@@ -136,14 +136,15 @@
                               "white"))
 
 (define (first-order-flow)
-  (play-n (send-value-in less-than-three two))
-  (play-n (send-value-out less-than-three (colorize two "white")))
-  (play-n (send-value-in less-than-three four))
+  (play-n #:aspect 'fullscreen (send-value-in less-than-three two))
+  (play-n #:aspect 'fullscreen (send-value-out less-than-three (colorize two "white")))
+  (play-n #:aspect 'fullscreen (send-value-in less-than-three four))
   (slide (bad-value-in-boundary less-than-three four)))
 
 (define (higher-order-flow)
-  (play-n (send-value-in ho-contract function-machine))
-  (play-n (send-value-out ho-contract 
+  (play-n #:aspect 'fullscreen (send-value-in ho-contract function-machine))
+  (play-n #:aspect 'fullscreen
+          (send-value-out ho-contract 
                           (function-machine-with-white-insides-and-boundaries 
                            (blank)
                            (blank)))))
@@ -167,6 +168,7 @@
      1/2 1/2
      the-machine))     
   (play-n
+   #:aspect 'fullscreen
    #:steps (list 10 40)
    (λ (n1 n2)
      (define the-number
@@ -257,6 +259,7 @@
   (define-values (left right bkg line boundary-color) (make-bkg-and-line #f))
   (define bkg+line (cc-superimpose bkg (inset line 0 (- margin))))
   (play-n
+   #:aspect 'fullscreen
    (λ (n1 n2)
      (parameterize ([current-font-size 60])
        (pin-center 
@@ -341,8 +344,8 @@
         (cellophane team n2))
        (blank 0 50)))))
   (if fade-in?
-      (play-n the-proc)
-      (play-n (λ (n1) (the-proc 1 n1)))))
+      (play-n #:aspect 'fullscreen the-proc)
+      (play-n #:aspect 'fullscreen (λ (n1) (the-proc 1 n1)))))
 
 (define (boundary-pict)
   (define-values (left right bkg line boundary-color) (make-bkg-and-line #f))

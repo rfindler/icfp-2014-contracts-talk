@@ -1,5 +1,5 @@
 #lang racket/gui
-(require slideshow "title-lib.rkt" "util.rkt")
+(require slideshow/fullscreen "title-lib.rkt" "util.rkt")
 
 (provide title-slide)
 (define (title-slide)

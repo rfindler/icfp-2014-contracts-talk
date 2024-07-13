@@ -1,6 +1,6 @@
 #lang racket
 
-(require slideshow
+(require slideshow/fullscreen
          racket/gui/base
          racket/class)
 

@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow
+(require slideshow/fullscreen
          slideshow/play
          slideshow/code
          pict
@@ -376,6 +376,7 @@
   (define lines (contract-error-msg->strings result))
   (define fade-to 1/4)
   (play-n
+   #:aspect 'fullscreen
    (λ (n1 n2)
      (define passed-it? #f)
      (scale-to-fit
@@ -450,4 +451,4 @@
     x))
   
 (module+ main
-  (play-n (make-pip-sequence 0 0 #f 'type)))
+  (play-n #:aspect 'fullscreen (make-pip-sequence 0 0 #f 'type)))

@@ -1,6 +1,6 @@
 #lang racket
 (require redex 
-         slideshow
+         slideshow/fullscreen
          slideshow/play
          "util.rkt")
 

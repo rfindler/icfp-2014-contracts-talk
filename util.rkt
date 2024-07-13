@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow racket/gui/base
+(require slideshow/fullscreen racket/gui/base
          slideshow/code)
 
 (current-font-size 40)

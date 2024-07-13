@@ -1,5 +1,5 @@
 #lang racket
-(require racket/runtime-path slideshow "util.rkt")
+(require racket/runtime-path slideshow/fullscreen "util.rkt")
 (provide get-bitmap
          (contract-out
           [show-team (->* () 

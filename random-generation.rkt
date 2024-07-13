@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow slideshow/play "util.rkt")
+(require slideshow/fullscreen slideshow/play "util.rkt")
 (provide big-type/us-them)
 
 (define (arr)
@@ -63,6 +63,7 @@
 
 (define (big-type/us-them)
   (play-n
+   #:aspect 'fullscreen
    (λ (n1 n2)
      (add-label
       "we provide" 100 n1

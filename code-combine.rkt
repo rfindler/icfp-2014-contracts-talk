@@ -1,5 +1,5 @@
 #lang racket
-(require pict slideshow "util.rkt")
+(require pict slideshow/fullscreen "util.rkt")
 
 
 (provide

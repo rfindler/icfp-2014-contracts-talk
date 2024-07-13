@@ -12,7 +12,7 @@
          "faces.rkt"
          "boundaries-not-projections.rkt"
          "takeaways.rkt"
-         slideshow
+         slideshow/fullscreen
          slideshow/play)
 
 (title-slide)
@@ -23,11 +23,12 @@
             "infectious")
   
   (define first-sequence (make-pip-sequence 0 0 #f #f))
-  (play-n (wrap/first-argument-always-1 first-sequence))
+  (play-n #:aspect 'fullscreen (wrap/first-argument-always-1 first-sequence))
   
   (define pip5050 (make-pip-sequence 50 50 #t #f))
   (slide (pip5050 1 1 0 0 0 0 0 0))
   (play-n
+   #:aspect 'fullscreen
    (λ (a b c)
      (pip5050 1 1 1 1 1 a b c)))
   
@@ -37,7 +38,7 @@
   (slide (pip-false 1 1 1 1 1 0 0 0))
   
   (define pip-false/contract (make-pip-sequence #f #f 'error 'type #:red-contract? #t))
-  (play-n (λ (n1 n2 n3) (pip-false/contract n1 n2 n3 0 0 0 0 0)))
+  (play-n #:aspect 'fullscreen (λ (n1 n2 n3) (pip-false/contract n1 n2 n3 0 0 0 0 0)))
   
   (violation-with-type-based-contract)
   
@@ -51,11 +52,12 @@
   (define pip-neg (make-pip-sequence -50 -75 #t 'type))
   (slide (pip-neg 1 1 0 0 0 0 0 0))
   (play-n
+   #:aspect 'fullscreen
    (λ (a b c)
      (pip-neg 1 1 1 1 1 a b c)))
   
   (slide original-contract)
-  (play-n numeric-contract->dependent-version)
+  (play-n #:aspect 'fullscreen numeric-contract->dependent-version)
   
   (violation-with-dependent-based-contract)
   
@@ -74,9 +76,9 @@
   (first-order-flow)
   (base-rule)
   (higher-order-flow)
-  (play-n function-rule-part1)
+  (play-n #:aspect 'fullscreen function-rule-part1)
   (function-in-boundary)
-  (play-n function-rule-part2))
+  (play-n #:aspect 'fullscreen function-rule-part2))
 
 (begin
   (subtitle "Applications:"

@@ -1,5 +1,5 @@
 #lang racket
-(require slideshow
+(require slideshow/fullscreen
          slideshow/play
          plot
          "faces.rkt"
@@ -107,6 +107,7 @@
 
 (define (recap)
   (play-n
+   #:aspect 'fullscreen
    #:steps '(10 10 20 20 20 10)
    (λ (n1 n1b n2-n3 n4-n5 n6-n7 n8)
      (define-values (n2 n3) (split n2-n3))
